@@ -20,6 +20,7 @@
     if (!_collision) {
         _collision = [[UICollisionBehavior alloc]init];
         _collision.translatesReferenceBoundsIntoBoundary = YES;
+        _collision.collisionMode = UICollisionBehaviorModeBoundaries;
     }
     return _collision;
 }
@@ -28,7 +29,7 @@
 {
     if (!_gravity) {
         _gravity = [[UIGravityBehavior alloc]init];
-        _gravity.magnitude = 0.1;
+        _gravity.magnitude = 1;
     }
     return _gravity;
 }

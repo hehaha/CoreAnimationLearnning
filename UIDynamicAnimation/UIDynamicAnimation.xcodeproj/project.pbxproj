@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F64008B1AE7B4C9007C2136 /* SpringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64008A1AE7B4C9007C2136 /* SpringView.m */; };
 		0FBCE8351ABABA9D005351F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCE8341ABABA9D005351F9 /* main.m */; };
 		0FBCE8381ABABA9D005351F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCE8371ABABA9D005351F9 /* AppDelegate.m */; };
 		0FBCE83B1ABABA9D005351F9 /* UIDynamicAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCE8391ABABA9D005351F9 /* UIDynamicAnimation.xcdatamodeld */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F6400891AE7B4C9007C2136 /* SpringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringView.h; sourceTree = "<group>"; };
+		0F64008A1AE7B4C9007C2136 /* SpringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringView.m; sourceTree = "<group>"; };
 		0FBCE82F1ABABA9D005351F9 /* UIDynamicAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIDynamicAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBCE8331ABABA9D005351F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FBCE8341ABABA9D005351F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				0FBCE8371ABABA9D005351F9 /* AppDelegate.m */,
 				0FBCE83C1ABABA9D005351F9 /* ViewController.h */,
 				0FBCE83D1ABABA9D005351F9 /* ViewController.m */,
+				0F6400891AE7B4C9007C2136 /* SpringView.h */,
+				0F64008A1AE7B4C9007C2136 /* SpringView.m */,
 				0FBCE85B1ABABAFB005351F9 /* MyBehavior.h */,
 				0FBCE85C1ABABAFB005351F9 /* MyBehavior.m */,
 				0FBCE83F1ABABA9D005351F9 /* Main.storyboard */,
@@ -232,6 +237,7 @@
 				0FBCE83E1ABABA9D005351F9 /* ViewController.m in Sources */,
 				0FBCE85D1ABABAFB005351F9 /* MyBehavior.m in Sources */,
 				0FBCE8351ABABA9D005351F9 /* main.m in Sources */,
+				0F64008B1AE7B4C9007C2136 /* SpringView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +430,7 @@
 				0FBCE8571ABABA9D005351F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FBCE8581ABABA9D005351F9 /* Build configuration list for PBXNativeTarget "UIDynamicAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				0FBCE85A1ABABA9D005351F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

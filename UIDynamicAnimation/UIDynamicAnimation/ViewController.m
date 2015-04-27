@@ -16,7 +16,7 @@
 @property(nonatomic, strong)UIView* attachingView;
 @property(nonatomic, strong)UIPanGestureRecognizer *panGesture;
 @property(nonatomic, strong)MyBehavior *behavior;
-@property(nonatomic, strong)UIView *myView;
+@property(nonatomic, strong)UIDynamicItemBehavior *itemBehavior;
 @end
 
 @implementation ViewController
@@ -29,20 +29,21 @@
     self.attachingView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.attachingView];
     
-    self.panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pannedAction:)];
-    [self.view addGestureRecognizer:self.panGesture];
+    self.itemBehavior = [[UIDynamicItemBehavior alloc]initWithItems:@[self.attachingView]];
+    self.itemBehavior.elasticity = 0.75;
     
+    self.snap = [[UISnapBehavior alloc]initWithItem:self.attachingView snapToPoint:CGPointMake(100, 100)];
     self.animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+    [self.animator addBehavior:self.itemBehavior];
     [self.animator addBehavior:self.behavior];
     
-    UIView *newView = [[UIView alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
-    newView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:newView];
     [self.behavior addItem:self.attachingView];
-    [self.behavior addItem:newView];
-    self.myView = newView;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    [self.animator addBehavior:self.snap];
+}
 - (MyBehavior *)behavior
 {
     if (!_behavior) {
@@ -54,23 +55,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)pannedAction:(UIPanGestureRecognizer *)sender
-{
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        self.attachBehavior = [[UIAttachmentBehavior alloc]initWithItem:self.attachingView attachedToAnchor:[sender locationInView:self.view]];
-        [self.animator addBehavior:self.attachBehavior];
-        [self.animator removeBehavior:self.snap];
-    }
-    else if (sender.state == UIGestureRecognizerStateChanged)
-    {
-        self.attachBehavior.anchorPoint = [sender locationInView:self.view];
-    }
-    else if (sender.state == UIGestureRecognizerStateEnded) {
-        [self.animator removeBehavior:self.attachBehavior];
-        self.snap = [[UISnapBehavior alloc]initWithItem:self.attachingView snapToPoint:self.myView.center];
-        [self.animator addBehavior: self.snap];
-    }
 }
 @end
